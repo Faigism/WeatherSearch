@@ -14,7 +14,7 @@ const WeatherDetails = ({ weatherData }) => {
         <i className="bx bx-wind"></i>
         <div className="text">
           <div className="info-wind">
-            <span>{parseInt(weatherData.wind.speed)}Km/h</span>
+            <span>{parseInt(weatherData.wind.speed)}m/s</span>
           </div>
           <p>Wind Speed</p>
         </div>
