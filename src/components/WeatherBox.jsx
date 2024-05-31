@@ -19,7 +19,7 @@ const WeatherBox = ({ weatherData }) => {
   return (
     <div className="weather-box active">
       <img src={weatherIcon} alt="Weather Icon" />
-      <h2>{weatherData.name}</h2>
+      <h2>{weatherData.name.substring(0, 20)}</h2>
       <div className="temperature">
         {parseInt(weatherData.main.temp)}
         <span>°C</span>

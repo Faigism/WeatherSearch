@@ -50,10 +50,18 @@ function App() {
   const handleInputChange = (e) => {
     let value = e.target.value.trimStart()
     value = value.replace(/\s+/g, ' ')
-    if (value.length > 20) {
-      value = value.slice(0, 20)
+    const onlyLettersRegex = /^[а-яА-ЯёЁa-zA-ÜƏIÖĞÇŞüəiöğçşı]+$/
+    let filteredValue = value
+      .split(' ')
+      .filter((word) =>
+        word.split('').every((char) => onlyLettersRegex.test(char))
+      )
+      .join(' ')
+
+    if (filteredValue.length > 20) {
+      filteredValue = filteredValue.slice(0, 20)
     }
-    setInputValue(value)
+    setInputValue(filteredValue)
   }
 
   return (
